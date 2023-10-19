@@ -30,7 +30,8 @@ public class SelectAll extends HttpServlet {
 			String sq="select * from officer ";
 			System.out.println(sq);
 			PreparedStatement ps=c.prepareStatement(sq);
-			pw.print("<table width=50% border=1>");
+			pw.print("<html>");
+			pw.print("<table width=50% border=1 >");
 			pw.print("<caption>Employee Details:</caption>");
 			ResultSet rs=ps.executeQuery();
 			pw.print("<br><br>");
@@ -49,6 +50,7 @@ public class SelectAll extends HttpServlet {
 				pw.print("</tr>");
 			}
 			pw.print("</table>");
+			pw.print("</html>");
 			}catch(Exception e) {
 
 		}finally {

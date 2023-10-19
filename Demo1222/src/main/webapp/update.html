@@ -8,29 +8,40 @@
 <div class="upd">
 <form action="updat" method="post"><br>
 <h3>Updating Employ Details</h3><br>
-<label>Select field  :</label>
-<select name="sel">
+<table>
+<tr><td><label>Select field  :</label></td>
+<td><select name="sel">
 <option value="firstname">first name</option>
 <option value="lastname">last name</option>
 <option value="phonenumber">phone number</option>
 <option value="department">Department</option>
 <option value="username">user name</option>
-</select><br><br>
-<label>value :</label>
-<input type="text" name="val" /><br><br>
-<label>employ id :</label>
-<input type="text" name="emp" /><br><br>
+</select><br><br></td></tr>
+<tr><td><label>value :</label></td>
+<td><input type="text" name="val" /><br><br></td></tr>
+<tr><td><label>employ id :</label></td>
+<td><input type="text" name="emp" /><br><br></td></tr>
+</table>
 <input type="submit" value="Update" /><br><br>
 </form>
 </div>
 </body>
 
 <style>
+input[type=submit]{
+background-color:green;
+color:white;
+font-size:large;
+}
+input[type=submit]:hover{
+ background-color:blue;
+}
 .upd{
 text-align:center;
 border-style:solid;
-margin-left:27%;
-margin-right:32%;
+margin-left:32%;
+margin-right:36%;
+padding:3%;
 }
 </style>
 </html>

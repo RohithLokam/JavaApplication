@@ -9,6 +9,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 
 @WebServlet("/Crud")
@@ -18,25 +19,34 @@ public class Crud extends HttpServlet {
 	protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 	String  s=request.getParameter("choicee");
 	PrintWriter pw= response.getWriter();
+	HttpSession hs=request.getSession();
+	String fn=(String)hs.getAttribute("fname");
 	 if(s.equalsIgnoreCase("insert")) {
+			pw.print("<h2 style='text-align:right'>welcome "+fn+"</h2>");
 		 RequestDispatcher rd=request.getRequestDispatcher("insert.html");
-			rd.forward(request, response);
+			rd.include(request, response);
 	 }else if(s.equalsIgnoreCase("update")) {
+			pw.print("<h2 style='text-align:right'>welcome "+fn+"</h2>");
 		 RequestDispatcher rd=request.getRequestDispatcher("update.html");
-			rd.forward(request, response);
+			rd.include(request, response);
 	 }else if(s.equalsIgnoreCase("select")) {
+			pw.print("<h2 style='text-align:right'>welcome "+fn+"</h2>");
 		 RequestDispatcher rd=request.getRequestDispatcher("select.html");
-			rd.forward(request, response);
+			rd.include(request, response);
 	 }else if(s.equalsIgnoreCase("delete")) {
+			pw.print("<h2 style='text-align:right'>welcome "+fn+"</h2>");
 		 RequestDispatcher rd=request.getRequestDispatcher("delete.html");
-			rd.forward(request, response);
+			rd.include(request, response);
 	 }	else if(s.equalsIgnoreCase("selectall")) {
 		 RequestDispatcher rd=request.getRequestDispatcher("SelectAll");
 			rd.forward(request, response);
 	 }	else if(s.equalsIgnoreCase("SelfUpdate")) {
+			pw.print("<h2 style='text-align:right'>welcome "+fn+"</h2>");
 		 RequestDispatcher rd=request.getRequestDispatcher("tupdate.html");
-			rd.forward(request, response);
+			rd.include(request, response);
 	 } else if(s.equalsIgnoreCase("exit")) {
+			pw.print("<h2 style='text-align:right'>Bye "+fn+"</h2>");
+
 		pw.print("<h2 style='color:blue;text-align:center;'>Thank you for visiting mss </h2>");
 	 }	
 		
